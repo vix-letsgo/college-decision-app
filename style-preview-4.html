@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 4 - Warm & Cozy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(160deg, #f5ebe0, #e8d5b7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 52px;
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 8px 40px rgba(180,130,80,0.12);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .coffee-icon { font-size: 28px; }
+    .brand { font-family: 'Playfair Display', serif; font-size: 16px; color: #8b6345; }
+    .progress { margin-bottom: 36px; }
+    .progress-text { font-size: 13px; color: #b8956a; margin-bottom: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .progress-bar { height: 6px; background: rgba(180,130,80,0.15); border-radius: 6px; }
+    .progress-fill { height: 100%; width: 40%; background: linear-gradient(90deg, #c8956c, #e8b896); border-radius: 6px; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #4a3728;
+      margin-bottom: 36px;
+      line-height: 1.4;
+    }
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.6);
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-size: 15px;
+      color: #6b4f3a;
+      transition: all 0.2s;
+      font-weight: 400;
+    }
+    .option:hover { background: rgba(255,255,255,0.9); border-color: #c8956c; }
+    .option.selected { background: #c8956c; border-color: #c8956c; color: white; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #c8956c; flex-shrink: 0; }
+    .option.selected .dot { background: white; border-color: white; }
+    .label { font-size: 11px; color: #b8956a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 4 — Warm & Cozy</div>
+    <div class="header">
+      <span class="coffee-icon">☕</span>
+      <span class="brand">Basecamp Coffee</span>
+    </div>
+    <div class="progress">
+      <div class="progress-text">Question 2 of 5</div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
+    <h1>It's Friday night. You're picking something to watch. What do you go for?</h1>
+    <div class="options">
+      <div class="option"><div class="dot"></div> An epic fantasy series — give me all the worlds</div>
+      <div class="option selected"><div class="dot"></div> A feel-good comedy I've already seen 10 times</div>
+      <div class="option"><div class="dot"></div> A documentary that'll make me question everything</div>
+      <div class="option"><div class="dot"></div> Whatever's trending — I'll decide after the trailer</div>
+      <div class="option"><div class="dot"></div> A thriller I shouldn't be watching alone at midnight</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 2 - Minimal & Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 56px;
+      max-width: 580px;
+      width: 100%;
+      border: 1px solid #e8e8e8;
+    }
+    .label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; }
+    .step { font-size: 13px; color: #bbb; margin-bottom: 12px; }
+    .progress-bar { height: 2px; background: #f0f0f0; margin-bottom: 40px; }
+    .progress-fill { height: 100%; width: 40%; background: #000; }
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #111;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+    }
+    .options { display: flex; flex-direction: column; gap: 2px; }
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      font-size: 15px;
+      color: #333;
+      font-weight: 400;
+      transition: color 0.15s;
+    }
+    .option:hover { color: #000; }
+    .option:hover .arrow { opacity: 1; }
+    .arrow { opacity: 0; font-size: 18px; transition: opacity 0.15s; }
+    .option.selected { color: #000; font-weight: 600; }
+    .option.selected .arrow { opacity: 1; }
+    .tag {
+      display: inline-block;
+      background: #000;
+      color: white;
+      font-size: 10px;
+      padding: 2px 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 2 — Minimal & Clean</div>
+    <div class="tag">Coffee Personality Quiz</div>
+    <div class="step">2 / 5</div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <h1>It's Friday night. You're picking something to watch. What do you go for?</h1>
+    <div class="options">
+      <div class="option">An epic fantasy series — give me all the worlds <span class="arrow">→</span></div>
+      <div class="option selected">A feel-good comedy I've already seen 10 times <span class="arrow">→</span></div>
+      <div class="option">A documentary that'll make me question everything <span class="arrow">→</span></div>
+      <div class="option">Whatever's trending — I'll decide after the trailer <span class="arrow">→</span></div>
+      <div class="option">A thriller I shouldn't be watching alone at midnight <span class="arrow">→</span></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 3 - Bold & Dramatic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      max-width: 620px;
+      width: 100%;
+      padding: 56px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+    .logo { font-family: 'Bebas Neue', cursive; font-size: 20px; color: #c8a96e; letter-spacing: 3px; }
+    .step { font-size: 13px; color: #555; letter-spacing: 2px; }
+    .progress-bar { height: 3px; background: #222; margin-bottom: 48px; }
+    .progress-fill { height: 100%; width: 40%; background: #c8a96e; }
+    .label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 48px;
+      color: white;
+      margin-bottom: 48px;
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option {
+      padding: 20px 24px;
+      border: 1px solid #222;
+      cursor: pointer;
+      font-size: 15px;
+      color: #888;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .option:hover { border-color: #c8a96e; color: white; background: #111; }
+    .option.selected { border-color: #c8a96e; color: #c8a96e; background: #111; }
+    .num { font-family: 'Bebas Neue', cursive; font-size: 22px; color: #333; min-width: 28px; }
+    .option.selected .num, .option:hover .num { color: #c8a96e; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 3 — Bold & Dramatic</div>
+    <div class="top-bar">
+      <div class="logo">Basecamp Coffee</div>
+      <div class="step">02 / 05</div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <h1>It's Friday night. You're picking something to watch. What do you go for?</h1>
+    <div class="options">
+      <div class="option"><span class="num">01</span> An epic fantasy series — give me all the worlds</div>
+      <div class="option selected"><span class="num">02</span> A feel-good comedy I've already seen 10 times</div>
+      <div class="option"><span class="num">03</span> A documentary that'll make me question everything</div>
+      <div class="option"><span class="num">04</span> Whatever's trending — I'll decide after the trailer</div>
+      <div class="option"><span class="num">05</span> A thriller I shouldn't be watching alone at midnight</div>
+    </div>
+  </div>
+</body>
+</html>
