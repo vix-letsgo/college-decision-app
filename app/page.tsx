@@ -150,13 +150,15 @@ const QUESTIONS: Question[] = [
   },
   {
     id: 3,
-    text: 'Which TV character are you at a party?',
+    text: 'Which movie character are you at a party?',
     answers: [
       { emoji: '🗡️', text: 'Daenerys — showing up with dragons (metaphorically)', personality: 'bold' },
-      { emoji: '☀️', text: 'Leslie Knope — organizing the snack table', personality: 'sweet' },
+      { emoji: '💕', text: 'Shahrukh Khan — The Eternal Lover', personality: 'sweet' },
       { emoji: '📚', text: 'Hermione — in the corner with a book', personality: 'zen' },
-      { emoji: '🌑', text: 'Wednesday Addams — arrives fashionably late', personality: 'owl' },
-      { emoji: '👑', text: 'Blair Waldorf — the host, obviously', personality: 'indulgent' },
+      { emoji: '🌟', text: 'Priyanka Chopra — The One Who Made It On Her Terms', personality: 'bold' },
+      { emoji: '🎬', text: 'Amitabh Bachchan — The OG Superstar', personality: 'indulgent' },
+      { emoji: '🌸', text: 'Katrina Kaif — The Beauty', personality: 'zen' },
+      { emoji: '🔥', text: 'Ranvir Singh — The Beast', personality: 'owl' },
     ],
   },
   {
