@@ -15,8 +15,8 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "What's Your Coffee Personality? | ShixVix Coffee",
-  description: "Discover your coffee personality and get a personalized drink recommendation from ShixVix Coffee.",
+  title: "College Fit Finder",
+  description: "Answer 7 questions and find out which colleges and majors match your personality.",
 };
 
 export default function RootLayout({
