@@ -326,7 +326,6 @@ export default function Home() {
 
   useEffect(() => {
     if (step !== 'results' || hasSubmitted.current) return
-    if (!process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL) return
     hasSubmitted.current = true
 
     const userProfile = buildProfile(collectedAnswers)
@@ -337,10 +336,9 @@ export default function Home() {
       .map(name => { const e = lookupEntry(name, MAJOR_DB); return { name, score: matchScore(userProfile, e.profile) } })
       .sort((a, b) => b.score - a.score)
 
-    fetch(process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL, {
+    fetch('/api/submit', {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         timestamp: new Date().toISOString(),
         name: userName,
