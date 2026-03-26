@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 // ─── Dimensions ───────────────────────────────────────────────────────────────
 // technical:    quantitative/STEM (1) vs creative/humanistic (0)
@@ -319,7 +319,39 @@ export default function Home() {
     setStep('name'); setUserName(''); setNameInput('')
     setColleges([]); setCollegeInput(''); setMajors([]); setMajorInput('')
     setCurrentQ(0); setSelectedAnswer(null); setCollectedAnswers([])
+    hasSubmitted.current = false
   }
+
+  const hasSubmitted = useRef(false)
+
+  useEffect(() => {
+    if (step !== 'results' || hasSubmitted.current) return
+    if (!process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL) return
+    hasSubmitted.current = true
+
+    const userProfile = buildProfile(collectedAnswers)
+    const collegeResults = colleges
+      .map(name => { const e = lookupEntry(name, COLLEGE_DB); return { name, score: matchScore(userProfile, e.profile) } })
+      .sort((a, b) => b.score - a.score)
+    const majorResults = majors
+      .map(name => { const e = lookupEntry(name, MAJOR_DB); return { name, score: matchScore(userProfile, e.profile) } })
+      .sort((a, b) => b.score - a.score)
+
+    fetch(process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        timestamp: new Date().toISOString(),
+        name: userName,
+        colleges: collegeResults.map(r => `${r.name} (${r.score}%)`).join(', '),
+        majors: majorResults.map(r => `${r.name} (${r.score}%)`).join(', '),
+        topCollege: collegeResults[0]?.name ?? '',
+        topCollegeScore: collegeResults[0]?.score ?? '',
+        topMajor: majorResults[0]?.name ?? '',
+        topMajorScore: majorResults[0]?.score ?? '',
+      }),
+    }).catch(() => {}) // silent fail — never block the user
+  }, [step]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Name ──────────────────────────────────────────────────────────────────
   if (step === 'name') return (
