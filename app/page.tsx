@@ -339,6 +339,7 @@ export default function Home() {
 
     fetch(process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
         timestamp: new Date().toISOString(),
